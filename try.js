@@ -1,77 +1,58 @@
+/*
 
-/*								3. Chessboard 
-							Write a program that creates a string that represents an 8×8 grid, using newline
-							characters to separate lines. At each position of the grid there is either a space
-							or a "#" character. The characters should form a chessboard.
-							Passing this string to console.log should show something like this:
-							# # # #
-							 # # # #
-							# # # #
-							 # # # #
-							# # # #
-							 # # # #
-							# # # #
-							 # # # #
-							When you have a program that generates this pattern, define a binding size
-							= 8 and change the program so that it works for any size, outputting a grid
-							of the given width and height.
- */
+				3. Bean counting
+
+				You can get the Nth character, or letter, from a string by writing "string"[N].
+				The returned value will be a string containing only one character (for example,
+				"b"). The first character has position 0, which causes the last one to be found at
+				position string.length - 1. In other words, a two-character string has length
+				2, and its characters have positions 0 and 1.
+				Write a function countBs that takes a string as its only argument and returns
+				a number that indicates how many uppercase “B” characters there are in the
+				string.
+				Next, write a function called countChar that behaves like countBs, except
+				it takes a second argument that indicates the character that is to be counted
+				(rather than counting only uppercase “B” characters). Rewrite countBs to
+				make use of this new function.
 
 
+				Define f to hold a function value
+				const f = function(a) {
+				console.log(a + 2);
+				};
 
-//this is better
-let odd = '';
-let even = '';
-let gridnumber = 8;
-for (let counter = 0; counter < gridnumber/2; counter++) {
-	odd = odd + ' #'; 
-	even = even + '# ';
-}
-for (let counter = 0; counter < gridnumber; counter++) {
-	if (counter % 2 == 0) {
-		console.log(even);
-	} else {
-		console.log(odd);
-	}
-}
+				Declare g to be a function
+				function g(a, b) {
+				return a * b * 3.5;
+				}
 
+				A less verbose function value
+				let h = a => a % 3;
+*/
 
-
-let gridnumber = 8;
-for (let counter = 0; counter < gridnumber; counter++) {
-	let odd = '';
-	let even = '';
-	if (counter % 2 == 0) {
-		for (let counter = 0; counter < gridnumber/2; counter++) {
-			even = even + '# ';
+let countBs = (word) => {
+	let bs = 0;
+	for (let i = 0; i < word.length; i++) {
+		if (word[i] === 'B') {
+			bs += 1;
 		}
-		console.log(even);
-	} else {
-		for (let counter = 0; counter < gridnumber/2; counter++) {
-			odd = odd + ' #';
+	}
+	return bs;
+};
+
+console.log(countBs('BUBBBBLESB'));
+
+
+
+
+let countChar = (word, letter) => {
+	let counter = 0;
+	for (let i = 0; i < word.length; i++) {
+		if (word[i] == letter) {
+			counter += 1;
 		}
-		console.log(odd);
 	}
-}
+	return counter;
+};
 
-
-
-
-//this is best cause we console.log only once
-
-let odd = '';
-let even = '';
-let gridnumber = 8;
-let chessboard = '';
-for (let counter = 0; counter < gridnumber/2; counter++) {
-	odd = odd + ' #'; 
-	even = even + '# ';
-}
-for (let counter = 0; counter < gridnumber; counter++) {
-	if (counter % 2 == 0) {
-		chessboard =  chessboard + even + '\n';
-	} else {
-		chessboard =  chessboard + odd + '\n';
-	}
-}
-console.log(chessboard);
+console.log(countChar('abelaa', 'a'));

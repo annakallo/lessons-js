@@ -1,5 +1,6 @@
 
 // 2. Program Structure
+
 /*
 
 	Expressions and statements: 	- A fragment of code that produces a value is called an expression. 
@@ -350,3 +351,86 @@
 
 
 */
+
+
+let one = 1, two = 2;
+console.log(one + two);
+// → 3
+
+
+// Conditional execution
+if (num < 10) {
+	console.log("Small");
+} else if (num < 100) {
+	console.log("Medium");
+} else {
+	console.log("Large");
+}
+
+
+// While and do loops
+let result = 1;
+let counter = 0;
+while (counter < 10) {
+	result = result * 2;
+	counter = counter + 1;
+}
+console.log(result);
+// → 1024
+
+
+
+let yourName;
+do {
+	yourName = prompt("Who are you?");
+} while (!yourName);
+console.log(yourName);
+
+
+// For loops
+let result = 1;
+for (let counter = 0; counter < 10; counter = counter + 1) {
+	result = result * 2;
+}
+console.log(result);
+// → 1024
+
+
+// Breaking out of a loop
+for (let current = 20; ; current = current + 1) {
+	if (current % 7 == 0) {
+		console.log(current);
+		break;
+	}
+}
+// → 21
+
+
+
+counter += 1;
+result *= 2;
+counter -= 1;
+counter += 1; --> counter++;
+counter -= 1; --> counter--;
+
+		
+
+// Dispaching on a value with switch
+if (x == "value1") action1();
+else if (x == "value2") action2();
+else if (x == "value3") action3();
+else defaultAction();
+
+switch (prompt("What is the weather like?")) {
+	case "rainy":
+		console.log("Remember to bring an umbrella.");
+		break;
+	case "sunny":
+		console.log("Dress lightly.");
+	case "cloudy":
+		console.log("Go outside.");
+		break;
+	default:
+		console.log("Unknown weather type!");
+		break;
+}
